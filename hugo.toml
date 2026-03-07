@@ -1,0 +1,73 @@
+baseURL = "https://jacquesevans.dev/"
+languageCode = "en-us"
+title = "Jacques Evans"
+theme = "PaperMod"
+paginate = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  env = "production"
+  description = "Projects, notes, and things I'm learning."
+  author = "Jacques Evans"
+  defaultTheme = "dark"  # dark | light | auto
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+  [params.homeInfoParams]
+    Title = "hey"
+    Content = """
+I tinker with homelabs, self-hosted infrastructure, and whatever else catches my attention. \
+This is where I write about what I'm building and learning.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/johnfromoptus"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[params.profileMode]
+  enabled = false  # flip to true if you want a profile landing page instead
+
+# Search (PaperMod has built-in search)
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Menu
+[[menu.main]]
+  identifier = "posts"
+  name = "posts"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "projects"
+  name = "projects"
+  url = "/projects/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "search"
+  name = "search"
+  url = "/search/"
+  weight = 30
+
+# Markup config
+[markup]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+    codeFences = true
+    guessSyntax = true
+  [markup.goldmark.renderer]
+    unsafe = true  # allows raw HTML in markdown if needed
