@@ -1,6 +1,6 @@
 baseURL = "https://mundane.computer/"
 languageCode = "en-us"
-title = "Jacques Evans"
+title = "Mundane Computer"
 theme = "PaperMod"
 [pagination]
   pagerSize = 10
