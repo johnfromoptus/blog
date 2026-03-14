@@ -13,7 +13,8 @@ buildExpired = false
 [params]
   env = "production"
   description = "Projects, notes, and things I'm learning."
-  author = "Jacques Evans"
+  author = "Mundane"
+  images = ["images/og-default.png"]
   defaultTheme = "dark"  # dark | light | auto
   ShowReadingTime = true
   ShowPostNavLinks = true
@@ -34,6 +35,10 @@ This is where I write about what I'm building and learning.
     url = "https://github.com/johnfromoptus"
 
   [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/MundaneComputer"
+
+  [[params.socialIcons]]
     name = "rss"
     url = "/index.xml"
 
@@ -52,10 +57,10 @@ This is where I write about what I'm building and learning.
   weight = 10
 
 [[menu.main]]
-  identifier = "projects"
-  name = "projects"
-  url = "/projects/"
-  weight = 20
+  identifier = "about"
+  name = "about"
+  url = "/about/"
+  weight = 25
 
 [[menu.main]]
   identifier = "search"

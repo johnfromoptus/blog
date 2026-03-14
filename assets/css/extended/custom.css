@@ -1,0 +1,18 @@
+/* Flatten post list — remove card bubble effect */
+.post-entry {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    margin-bottom: 0;
+}
+
+.post-entry:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.post-entry:last-child {
+    border-bottom: none;
+}
