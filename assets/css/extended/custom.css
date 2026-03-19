@@ -1,7 +1,7 @@
 /* === Inter font + weight overrides === */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 300;
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry-content {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Flatten post list pages (non-homepage) */
@@ -57,25 +57,38 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
 }
 
-.home-wordmark-link {
-  display: inline-block;
+/* theme toggle sits inside #menu now — strip default button chrome */
+#menu #theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
 }
 
-.home-wordmark {
-  height: 44px;
+/* === Nav wordmark === */
+.wordmark {
   width: auto;
+}
+
+.wordmark-for-dark {
+  display: none;
+}
+
+body.dark .wordmark-for-light {
+  display: none;
+}
+
+body.dark .wordmark-for-dark {
   display: block;
 }
-
-.dark .home-wordmark {
-  filter: brightness(0) invert(1);
-}
-
 
 .home-tagline {
   font-size: 0.95rem;
   color: var(--secondary);
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
   max-width: 480px;
   line-height: 1.6;
@@ -162,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 12px;
   font-size: 0.78rem;
   color: var(--secondary);
-  font-weight: 300;
+  font-weight: 400;
   flex-wrap: wrap;
 }
 
@@ -182,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
 .featured-desc {
   font-size: 0.88rem;
   color: var(--secondary);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.65;
   margin: 0;
 }
@@ -222,7 +235,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-card-meta {
   font-size: 0.73rem;
   color: var(--secondary);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .post-card-title {
@@ -235,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-card-desc {
   font-size: 0.83rem;
   color: var(--secondary);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.55;
   margin: 0;
   display: -webkit-box;
@@ -258,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   border: 1px solid var(--border);
   color: var(--secondary);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* === Responsive === */
