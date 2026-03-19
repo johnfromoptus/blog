@@ -43,6 +43,11 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: none;
 }
 
+.entry-cover img {
+  max-height: 260px;
+  object-fit: cover;
+}
+
 /* === Homepage layout === */
 .home-container {
   max-width: 900px;
