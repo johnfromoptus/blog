@@ -100,11 +100,11 @@ html[data-theme="light"] .logo .wordmark-for-dark {
 }
 
 .home-tagline {
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   color: var(--secondary);
   font-weight: 400;
   margin: 0;
-  max-width: 480px;
+  max-width: 640px;
   line-height: 1.6;
 }
 
