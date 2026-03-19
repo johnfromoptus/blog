@@ -57,32 +57,37 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
 }
 
-/* theme toggle sits inside #menu now — strip default button chrome */
-#menu #theme-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: var(--primary);
+/* === Nav layout: logo | menu | toggle === */
+.nav {
+  justify-content: flex-start;
+}
+
+.nav > #menu {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav > .logo-switches {
+  margin: auto var(--gap);
+  flex-shrink: 0;
 }
 
 /* === Nav wordmark === */
-.wordmark {
+.logo .wordmark {
   width: auto;
+  display: inline;
 }
 
-.wordmark-for-dark {
+.logo .wordmark-for-light {
   display: none;
 }
 
-body.dark .wordmark-for-light {
-  display: none;
+html[data-theme="light"] .logo .wordmark-for-light {
+  display: inline;
 }
 
-body.dark .wordmark-for-dark {
-  display: block;
+html[data-theme="light"] .logo .wordmark-for-dark {
+  display: none;
 }
 
 .home-tagline {
