@@ -73,9 +73,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* === Nav wordmark === */
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo a img {
+  transform: none;
+  margin-inline-end: 0;
+}
+
 .logo .wordmark {
   width: auto;
-  display: inline;
 }
 
 .logo .wordmark-for-light {
