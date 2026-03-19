@@ -24,28 +24,39 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-/* Flatten post list pages (non-homepage) */
+/* Post list page cards */
 .post-entry {
-  border: none;
+  border: 1px solid var(--border);
   box-shadow: none;
-  border-radius: 0;
-  border-bottom: 1px solid var(--border);
-  padding: 12px 0;
-  margin-bottom: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: var(--gap);
 }
 
 .post-entry:hover {
   box-shadow: none;
   transform: none;
+  border-color: var(--primary);
 }
 
-.post-entry:last-child {
-  border-bottom: none;
+.entry-cover {
+  margin-bottom: 0;
 }
 
 .entry-cover img {
   max-height: 260px;
   object-fit: cover;
+  border-radius: 0;
+}
+
+.entry-header {
+  padding: 20px 24px 8px;
+  border-top: 1px solid var(--border);
+}
+
+.entry-footer {
+  padding: 0 24px 18px;
 }
 
 /* === Homepage layout === */
