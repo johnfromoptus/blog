@@ -30,13 +30,6 @@ I tinker with homelabs, self-hosted infrastructure, and whatever else catches my
 This is where I write about what I'm building and learning.
 """
 
-  [[params.socialIcons]]
-    name = "x"
-    url = "https://x.com/MundaneComputer"
-
-  [[params.socialIcons]]
-    name = "rss"
-    url = "/index.xml"
 
 [params.profileMode]
   enabled = false  # flip to true if you want a profile landing page instead
@@ -57,6 +50,12 @@ This is where I write about what I'm building and learning.
   name = "search"
   url = "/search/"
   weight = 30
+
+[[menu.main]]
+  identifier = "x"
+  name = "𝕏"
+  url = "https://x.com/MundaneComputer"
+  weight = 40
 
 # Markup config
 [markup]
