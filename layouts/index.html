@@ -1,0 +1,75 @@
+{{- define "main" }}
+<div class="home-container">
+
+  {{/* === INTRO === */}}
+  <section class="home-intro">
+    <a href="/" class="home-wordmark-link">
+      <img src="/images/wordmark.png" alt="{{ .Site.Title }}" class="home-wordmark">
+    </a>
+    <p class="home-tagline">{{ .Site.Params.description }}</p>
+    <div class="home-social">
+      {{- range .Site.Params.socialIcons }}
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
+        {{- partial "svg.html" . }}
+      </a>
+      {{- end }}
+    </div>
+  </section>
+
+  {{/* === FEATURED POST === */}}
+  {{- $posts := where .Site.RegularPages "Section" "posts" }}
+  {{- $featured := where $posts "Params.featured" true | first 1 }}
+  {{- if not $featured }}{{- $featured = first 1 $posts }}{{- end }}
+  {{- with index $featured 0 }}
+  <section class="home-featured">
+    <span class="section-label">Featured</span>
+    <a href="{{ .RelPermalink }}" class="featured-card">
+      {{- with .Params.cover.image }}
+      <div class="featured-image">
+        <img src="{{ . }}" alt="{{ $.Title }}">
+      </div>
+      {{- end }}
+      <div class="featured-content">
+        <div class="featured-meta">
+          <time>{{ .Date.Format "January 2, 2006" }}</time>
+          {{- with .Params.tags }}
+          <div class="featured-tags">{{- range . }}<span class="tag">{{ . }}</span>{{- end }}</div>
+          {{- end }}
+        </div>
+        <h2 class="featured-title">{{ .Title }}</h2>
+        {{- with .Description }}<p class="featured-desc">{{ . }}</p>{{- end }}
+      </div>
+    </a>
+  </section>
+  {{- end }}
+
+  {{/* === POST GRID === */}}
+  {{- $featuredPage := index $featured 0 }}
+  {{- $remaining := $posts }}
+  {{- if $featuredPage }}
+    {{- $remaining = where $posts "RelPermalink" "ne" $featuredPage.RelPermalink }}
+  {{- end }}
+  {{- if $remaining }}
+  <section class="home-grid">
+    <span class="section-label">Posts</span>
+    <div class="post-grid">
+      {{- range $remaining }}
+      <a href="{{ .RelPermalink }}" class="post-card">
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <time>{{ .Date.Format "Jan 2006" }}</time>
+          </div>
+          <h3 class="post-card-title">{{ .Title }}</h3>
+          {{- with .Description }}<p class="post-card-desc">{{ . }}</p>{{- end }}
+          {{- with .Params.tags }}
+          <div class="post-card-tags">{{- range . }}<span class="tag">{{ . }}</span>{{- end }}</div>
+          {{- end }}
+        </div>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+</div>
+{{- end }}

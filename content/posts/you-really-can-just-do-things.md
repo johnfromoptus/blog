@@ -4,6 +4,11 @@ date: 2026-03-14
 draft: false
 tags: ["side-projects", "writing"]
 description: "On taxonomical absurdity, the shoats.org taxonomy of sport, and just shipping the bit."
+featured: true
+cover:
+  image: "/images/posts/shoats-og.png"
+  alt: "Shoats - Taxonomy of Sport"
+  relative: false
 ---
 
 Do you know what a shoat is? It's a suckling pig; less than a year old, and still weaning.
